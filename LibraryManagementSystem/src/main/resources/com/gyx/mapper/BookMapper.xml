@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyx.mapper.BookMapper">
+    <resultMap id="bookResultMap" type="book">
+
+    </resultMap>
+    <!--查看所有书籍信息-->
+    <select id="selectAll" resultMap="bookResultMap">
+        select * from books;
+    </select>
+    <!--添加新书-->
+    <insert id="addBook">
+        insert into books values(#{bid},#{bname},#{bauthor},#{blanguage},#{bstatus});
+    </insert>
+    <!--根据索书号查询书籍信息-->
+    <select id="selectByBid" resultMap="bookResultMap">
+        select * from books where bid=#{bid};
+    </select>
+    <!--修改书籍信息-->
+    <update id="updateBook">
+        update books set bname=#{bname},bauthor=#{bauthor},blanguage=#{blanguage},bstatus=#{bstatus} where bid=#{bid};
+    </update>
+    <!--删除书籍-->
+    <delete id="deleteByBid">
+        delete from books where bid=#{bid};
+    </delete>
+</mapper>

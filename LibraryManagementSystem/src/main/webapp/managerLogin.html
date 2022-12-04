@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="managerloginDiv">
+    <form action="/managerLoginServlet" method="post" id="form">
+        <h1 id="loginMsg">管理员登录</h1>
+
+        <p>管理员ID:<input id="managerid" name="managerid" type="text"></p>
+
+        <p>管理员密码:<input id="managerpassword" name="managerpassword" type="password"></p>
+
+        <div id="subDiv">
+            <input type="submit" class="button" value="登录">
+            <input type="reset" class="button" value="reset">
+        </div>
+    </form>
+</div>
+</body>
+</html>

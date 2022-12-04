@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyx.mapper.ManagerMapper">
+    <resultMap id="managerResultMap" type="m_User">
+
+    </resultMap>
+    <!--根据工号查询管理员账户信息-->
+    <select id="selectByMid" resultMap="managerResultMap">
+        select * from m_user where mid=#{mid};
+    </select>
+    <!--查询所有管理员账户信息-->
+    <select id="selectAllMUsers" resultMap="managerResultMap">
+        select * from m_user;
+    </select>
+    <!--根据管理员id和密码查看管理员信息-->
+    <select id="selectByMidAndMpassword" resultMap="managerResultMap">
+        select * from m_user where mid=#{mid} and mpassword=#{mpassword};
+    </select>
+    <!--添加新的管理员-->
+    <insert id="addMUser">
+        insert into m_user values (#{mid},#{mname},#{mpassword});
+    </insert>
+    <!--修改管理员信息-->
+    <update id="updateMUser">
+        update m_user set mname=#{mname},mpassword=#{mpassword} where mid=#{mid};
+    </update>
+    <!--根据工号删除管理员信息-->
+    <delete id="deleteMUserByMid">
+        delete from m_user where mid=#{mid};
+    </delete>
+</mapper>

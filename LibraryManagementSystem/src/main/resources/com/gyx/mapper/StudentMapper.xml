@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyx.mapper.StudentMapper">
+    <resultMap id="studentResultMap" type="s_User">
+
+    </resultMap>
+    <!--查看所有读者信息-->
+    <select id="selectAllSUser" resultMap="studentResultMap">
+        select * from s_user;
+    </select>
+    <!--根据学号查询读者信息-->
+    <select id="selectBySid" resultMap="studentResultMap">
+        select * from s_user where sid=#{sid};
+    </select>
+    <!--修改读者账户信息-->
+    <update id="updateSUser">
+        update s_user set sname=#{sname},spassword=#{spassword} where sid=#{sid};
+    </update>
+    <!--添加新读者-->
+    <insert id="addSUser">
+        insert into s_user values (#{sid},#{sname},#{spassword});
+    </insert>
+    <!--删除读者信息-->
+    <delete id="deleteSUserBySid">
+        delete from s_user where sid=#{sid};
+    </delete>
+</mapper>
