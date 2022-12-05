@@ -14,6 +14,10 @@
     <select id="selectBySid" resultMap="studentResultMap">
         select * from s_user where sid=#{sid};
     </select>
+    <!--根据学号和密码查询读者信息-->
+    <select id="selectBySidAndSpassword" resultMap="studentResultMap">
+        select * from s_user where sid=#{sid} and spassword=#{spassword};
+    </select>
     <!--修改读者账户信息-->
     <update id="updateSUser">
         update s_user set sname=#{sname},spassword=#{spassword} where sid=#{sid};

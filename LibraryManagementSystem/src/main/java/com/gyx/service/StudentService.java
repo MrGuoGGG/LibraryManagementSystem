@@ -86,4 +86,17 @@ public class StudentService {
         //释放资源
         sqlSession.close();
     }
+    //根据学号和密码查询读者信息
+    public S_User selectBySidAndSpassword(String sid,String spassword){
+        //调用StudentMapper.selectBySidAndSpassword()
+
+        //获取sqlSession
+        SqlSession sqlSession = factory.openSession();
+        //获取StudentMapper
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        //调用方法
+        S_User sUser = mapper.selectBySidAndSpassword(sid, spassword);
+        //返回结果
+        return sUser;
+    }
 }

@@ -86,6 +86,31 @@ public class BookService {
         //释放资源
         sqlSession.close();
     }
-
+    //借书
+    public void borrowBook(String bid){
+        //获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //获取BookMapper
+        BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+        //调用方法
+        mapper.borrowBookByBid(bid);
+        //提交事务
+        sqlSession.commit();
+        //释放资源
+        sqlSession.close();
+    }
+    //还书
+    public void returnBook(String bid){
+        //获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //获取BookMapper
+        BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+        //调用方法
+        mapper.returnBookByBid(bid);
+        //提交事务
+        sqlSession.commit();
+        //释放资源
+        sqlSession.close();
+    }
 
 }

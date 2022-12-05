@@ -15,4 +15,8 @@ public interface BookMapper {
     void updateBook(Book book);
     //删除书籍
     void deleteByBid(String bid);
+    //借书
+    void borrowBookByBid(String bid);
+    //还书
+    void returnBookByBid(String bid);
 }

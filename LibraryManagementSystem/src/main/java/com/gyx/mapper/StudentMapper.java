@@ -1,6 +1,7 @@
 package com.gyx.mapper;
 
 import com.gyx.pojo.S_User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface StudentMapper {
     void addSUser(S_User sUser);
     //删除读者账户
     void deleteSUserBySid(String sid);
+    //根据学号和密码查询读者账户信息
+    S_User selectBySidAndSpassword(@Param("sid") String sid,@Param("spassword") String spassword);
 }

@@ -26,4 +26,12 @@
     <delete id="deleteByBid">
         delete from books where bid=#{bid};
     </delete>
+    <!--借书-->
+    <update id="borrowBookByBid">
+        update books set bstatus='已借出' where bid=#{bid};
+    </update>
+    <!--还书-->
+    <update id="returnBookByBid">
+        update books set bstatus='尚未借出' where bid=#{bid};
+    </update>
 </mapper>
