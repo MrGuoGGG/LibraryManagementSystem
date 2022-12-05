@@ -29,7 +29,7 @@ public class ManagerRegisterServlet extends HttpServlet {
         managerService.addMUser(mUser);
         //5.将结果存储到request域中
         request.setAttribute("mUser",mUser);
-        //6.转发到查询所有的servlet
+        //6.转发到管理员登录界面
         request.getRequestDispatcher("/managerLogin.jsp").forward(request,response);
     }
 
