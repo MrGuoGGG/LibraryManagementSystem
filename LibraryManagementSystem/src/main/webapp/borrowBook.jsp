@@ -16,7 +16,7 @@
 <%--<input type="button" value="添加书籍" id="addBook">--%>
 <%--<input type="button" value="管理员账户管理" id="manageManager">--%>
 <%--<input type="button" value="读者信息管理" id="manageReader">--%>
-<%--  <input type="button" value="我的" id="myInformation">--%>
+  <input type="button" value="我的借书信息" id="myBorrowInformation">
 <input type="button" value="退出登录" id="quit">
 <hr>
 <table border="1" cellspacing="0" width="80%" style="margin: auto">
@@ -60,10 +60,10 @@
         location.href="/studentLogin.jsp";
     }
 </script>
-<%--  <script>--%>
-<%--    document.getElementById("myInformation").onclick=function (){--%>
-<%--      location.href="/selectMyManagerInformationServlet";--%>
-<%--    }--%>
-<%--  </script>--%>
+  <script>
+    document.getElementById("myBorrowInformation").onclick=function (){
+      location.href="/myBorrowInformationServlet";
+    }
+  </script>
 </body>
 </html>
