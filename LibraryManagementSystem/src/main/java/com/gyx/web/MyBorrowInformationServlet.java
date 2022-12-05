@@ -18,6 +18,7 @@ public class MyBorrowInformationServlet extends HttpServlet {
         //将结果存到request域中
 
         //跳转到myBorrowInformation.jsp
+        request.getRequestDispatcher("/myBorrowInformation.jsp").forward(request,response);
     }
 
     @Override

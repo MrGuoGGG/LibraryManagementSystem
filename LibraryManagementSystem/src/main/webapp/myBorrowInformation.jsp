@@ -13,6 +13,7 @@
   <title>我的借书信息</title>
 </head>
 <body>
+<input type="button" value="返回上一级" id="back">
 <table border="1" cellspacing="0" width="80%" style="margin: auto">
   <tr>
     <th>索书号</th>
@@ -30,5 +31,10 @@
     </tr>
   </c:forEach>
 </table>
+<script>
+  document.getElementById("back").onclick=function (){
+    location.href="/borrowBookServlet";
+  }
+</script>
 </body>
 </html>
